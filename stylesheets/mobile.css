@@ -1,0 +1,85 @@
+
+.lt-480 h1 {
+    display: none;
+}
+
+.lt-480 h2 {
+    font-size: 18px;
+    text-align: center;
+    width: 100%;
+}
+
+
+.lt-480 #lists h2 a {
+    float: right;
+}
+
+.lt-480 #list h2 a:first-child {
+    margin-left: 10px;
+    float: left;
+}
+
+.lt-480 #list h2 a:last-child {
+    float: right;
+}
+
+.lt-480 #lists li a, .lt-480 #list li {
+    display: block;
+    font-size: 18px;
+    padding: 12px;
+    background-color: #eee;
+    width: 100%;
+}
+.lt-480 #lists li a i{
+    margin-right: 10px;
+}
+.lt-480 #list li a{
+    margin-right: 18px;
+}
+ 
+.lt-480 #lists li, .lt-480 #list li {
+    border-left: 8px solid #ccc;
+    border-bottom: none;
+}
+
+.lt-480 ul, .lt-480 li {
+    padding:0;
+    margin:0;
+}
+
+.lt-480 .container, .lt-480 .container .columns {
+    margin:0;
+    padding:0;
+}
+
+.lt-480 form {
+    width: 100%;
+    padding-left: 20px;
+    padding-right: 10px;
+    text-align:center;
+}
+
+.lt-480 legend {
+    font-size: 18px;
+    font-weight: normal;
+    line-height: 50px;
+    text-align:center;
+    display: block;
+    width: 100%;
+}
+
+.lt-480 legend a {
+    float: left;
+}
+
+.lt-480 form input {
+    display: block;
+    font-size: 18px;
+    height: 30px;
+    line-height: 22px;
+    width: 90%;
+}
+
+.lt-480 form button {
+}
+

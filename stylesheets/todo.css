@@ -1,0 +1,79 @@
+
+[class^="icon-"], [class*=" icon-"] {
+    vertical-align: baseline;
+}
+
+h1 {
+    text-align: center;
+}
+
+#lists li a {
+    display: block;
+    text-decoration:none;
+    font-size: 16px;
+    padding: 5px;
+}
+
+#lists li a:hover, #list li:hover{
+    background-color: #EEE;
+}
+
+#lists li a i {
+    float: right;
+}
+ 
+#lists li, #list li {
+    border-left: 5px solid #ccc;
+    border-bottom: 2px solid #ccc;
+}
+
+#list li {
+    padding: 5px;
+}
+
+#list li a {
+    display: inline-block;
+    float: right;
+}
+
+form {
+    display: none;
+}
+
+html[id*='list-'].lt-480 #lists,
+html[id*='list-'] #list form {
+    display: none;
+}
+
+html[id*='list-'] #list {
+    display: block;
+}
+
+#lists-page.lt-480 #list {
+    display: none;
+}
+
+#new-list-page.lt-480 #lists ul,
+#new-list-page.lt-480 #lists h2, 
+#new-list-page.lt-480 #list ,
+#new-item-page.lt-480 #list ul,
+#new-item-page.lt-480 #list h2, 
+#new-item-page.lt-480 #lists {
+    display: none
+}
+
+#new-list-page #lists,
+#new-list-page #lists form,
+#new-item-page #list form,
+#new-item-page #list {
+    display: block;
+}
+
+.gt-480 #list h2 i.icon-arrow-left {
+    display: none;
+}
+
+.no-list #list h2 a {
+    display:none;
+}
+
