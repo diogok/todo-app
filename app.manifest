@@ -1,5 +1,5 @@
 CACHE MANIFEST
-##6
+##8
 
 NETWORK:
 *
@@ -18,4 +18,4 @@ javascripts/head.min.js
 javascripts/jquery.min.js
 javascripts/pouchdb.min.js
 javascripts/path.min.js
-#javascripts/todo.css
+#javascripts/todo.js

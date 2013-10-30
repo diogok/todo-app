@@ -40,26 +40,12 @@ form {
     display: none;
 }
 
-html[id*='list-'].lt-480 #lists,
 html[id*='list-'] #list form {
     display: none;
 }
 
 html[id*='list-'] #list {
     display: block;
-}
-
-#lists-page.lt-480 #list {
-    display: none;
-}
-
-#new-list-page.lt-480 #lists ul,
-#new-list-page.lt-480 #lists h2, 
-#new-list-page.lt-480 #list ,
-#new-item-page.lt-480 #list ul,
-#new-item-page.lt-480 #list h2, 
-#new-item-page.lt-480 #lists {
-    display: none
 }
 
 #new-list-page #lists,
@@ -69,11 +55,10 @@ html[id*='list-'] #list {
     display: block;
 }
 
-.gt-480 #list h2 i.icon-arrow-left {
+.gt-800 #list h2 i.icon-arrow-left {
     display: none;
 }
 
 .no-list #list h2 a {
     display:none;
 }
-

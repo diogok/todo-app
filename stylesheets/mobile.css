@@ -1,65 +1,74 @@
 
-.lt-480 h1 {
+.lt-800 h1 {
     display: none;
 }
 
-.lt-480 h2 {
+.lt-800 h2 {
     font-size: 18px;
+    line-height: 20px;
+    margin-bottom:0;
+    padding: 20px;
     text-align: center;
     width: 100%;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 
-.lt-480 #lists h2 a {
+.lt-800 #lists h2 a {
     float: right;
 }
 
-.lt-480 #list h2 a:first-child {
-    margin-left: 10px;
+.lt-800 #list h2 a:first-child {
     float: left;
 }
 
-.lt-480 #list h2 a:last-child {
+.lt-800 #list h2 a:last-child {
     float: right;
 }
 
-.lt-480 #lists li a, .lt-480 #list li {
+.lt-800 #lists li a, .lt-800 #list li {
     display: block;
     font-size: 18px;
     padding: 12px;
     background-color: #eee;
-    width: 100%;
+    margin-bottom: 10px;
 }
-.lt-480 #lists li a i{
+
+.lt-800 #lists li a i{
     margin-right: 10px;
 }
-.lt-480 #list li a{
-    margin-right: 18px;
+
+.lt-800 #list li a{
+    margin-right: 10px;
 }
  
-.lt-480 #lists li, .lt-480 #list li {
+.lt-800 #lists li, .lt-800 #list li {
     border-left: 8px solid #ccc;
     border-bottom: none;
 }
 
-.lt-480 ul, .lt-480 li {
+.lt-800 ul, .lt-800 li {
     padding:0;
     margin:0;
 }
 
-.lt-480 .container, .lt-480 .container .columns {
+.lt-800 .container, .lt-800 .container .columns {
     margin:0;
     padding:0;
+    width: 100%;
 }
 
-.lt-480 form {
+.lt-800 form {
     width: 100%;
     padding-left: 20px;
     padding-right: 10px;
     text-align:center;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
 }
 
-.lt-480 legend {
+.lt-800 legend {
     font-size: 18px;
     font-weight: normal;
     line-height: 50px;
@@ -68,18 +77,35 @@
     width: 100%;
 }
 
-.lt-480 legend a {
+.lt-800 legend a {
     float: left;
 }
 
-.lt-480 form input {
+.lt-800 form input {
     display: block;
     font-size: 18px;
     height: 30px;
     line-height: 22px;
-    width: 90%;
+    width: 95%;
 }
 
-.lt-480 form button {
+.lt-800 form button {
+}
+
+html[id*='list-'].lt-800 #lists {
+    display: none
+}
+
+#lists-page.lt-800 #list {
+    display: none;
+}
+
+#new-list-page.lt-800 #lists ul,
+#new-list-page.lt-800 #lists h2, 
+#new-list-page.lt-800 #list ,
+#new-item-page.lt-800 #list ul,
+#new-item-page.lt-800 #list h2, 
+#new-item-page.lt-800 #lists {
+    display: none
 }
 
