@@ -5,7 +5,7 @@ NETWORK:
 *
 
 CACHE:
-#favicon.png
+icon.png
 stylesheets/base.css
 stylesheets/skeleton.css
 stylesheets/layout.css
