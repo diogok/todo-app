@@ -1,5 +1,5 @@
 CACHE MANIFEST
-##8
+##12
 
 NETWORK:
 *
@@ -10,7 +10,7 @@ stylesheets/base.css
 stylesheets/skeleton.css
 stylesheets/layout.css
 stylesheets/glyphicons.css
-stylesheets/todo.css
+#stylesheets/todo.css
 #stylesheets/mobile.css
 images/glyphicons-halflings-white.png
 images/glyphicons-halflings.png
@@ -19,3 +19,4 @@ javascripts/jquery.min.js
 javascripts/pouchdb.min.js
 javascripts/path.min.js
 #javascripts/todo.js
+

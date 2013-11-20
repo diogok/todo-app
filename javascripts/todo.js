@@ -1,8 +1,11 @@
 var todo = function(){
+    var db=null, html= $("#index-page"),curr_list=null;
 
-    var db = new PouchDB('toda'),
-        html = $("#index-page"),
-        curr_list = null;
+    try {
+        db = new PouchDB('toda',{adapter:'websql'});
+    } catch(ex) {
+        db = new PouchDB('toda');
+    }
 
     function now() {
          return parseInt(new Date().getTime()/1000);
