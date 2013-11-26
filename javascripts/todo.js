@@ -23,25 +23,25 @@ var todo = function(){
         }
     }
 
-    $("#list ul").on("click","a.del",function(evt){
+    $("#list ul, #list_options ul").on("click","a.del",function(evt){
         return confirm("Mark this item done?");
     });
 
-    $("#lists form").submit(function(){
-        var name = $("#lists form input").val().trim();
+    $("#new_list form").submit(function(){
+        var name = $("#new_list form input").val().trim();
         if(name.length < 1) return false;
         db.post({type:'list',name:name,timestamp: now()},function(err,res) {});
-        $("#lists form input").val("");
+        $("#new_list form input").val("");
         location.hash="#/lists";
         return false;
     });
 
-    $("#list form").submit(function(){
-        var content = $("#list form input").val().trim();
+    $("#new_item form").submit(function(){
+        var content = $("#new_item form input").val().trim();
         if(content.length < 1) return false;
         db.post({type:'item',content:content,list:curr_list,timestamp: now()},function(err,res) {});
-        $("#list form input").val("");
-        location.hash="#/list/"+curr_list;
+        $("#new_item form input").val("");
+        location.hash="#/alist/"+curr_list;
         return false;
     });
 
@@ -49,6 +49,11 @@ var todo = function(){
     });
 
     Path.map("#/new/item").to(function(){
+        $("#new_item a.back").attr("href","#/alist/"+curr_list);
+    });
+
+    Path.map("#/options/list").to(function(){
+        $("#list_options a.back").attr("href","#/alist/"+curr_list);
     });
 
     Path.map("#/lists").to(function(){
@@ -59,18 +64,16 @@ var todo = function(){
             } else {
                 for(var i in res.rows) {
                     var id = res.rows[i].key, name=res.rows[i].value;
-                    var li = '<li><a href="#/list/'+id+'"> '+name+' <i class="icon-arrow-right"></i></a></li>'
+                    var li = '<li><a href="#/alist/'+id+'"> '+name+' <i class="icon-arrow-right"></i></a></li>'
                     $("#lists ul").append(li);
                 }
             }
         });
     });
 
-    Path.map("#/list/:list").to(function(){
-        html.removeClass("no-list");
+    Path.map("#/alist/:list").to(function(){
         db.get(this.params["list"],function(err,list){
             curr_list = list["_id"];
-            $("#list form a").attr("href","#/list/"+list["_id"]);
             $("#list h2 span").text(list.name);
             db.query({map:map_items},{reduce:false},function(err,res){
                 $("#list ul").html("");
@@ -90,14 +93,21 @@ var todo = function(){
     Path.map("#/del/item/:id").to(function(){
         db.get(this.params["id"],function(err,doc){
             db.remove(doc,function(err,res) {
-                location.hash="#/list/"+curr_list;
+                location.hash="#/alist/"+curr_list;
+            });
+        })
+    });
+
+    Path.map("#/del/list").to(function(){
+        db.get(curr_list,function(err,doc){
+            db.remove(doc,function(err,res) {
+                location.hash="#/lists";
             });
         })
     });
 
     location.hash="#/lists";
     html.attr("id","lists-page");
-    html.addClass("no-list");
 
     Path.listen();
 

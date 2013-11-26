@@ -27,7 +27,7 @@
     float: right;
 }
 
-.lt-800 #lists li a, .lt-800 #list li {
+.lt-800 #lists li a, .lt-800 #list li, .lt-800 #list_options li a {
     display: block;
     font-size: 18px;
     padding: 12px;
@@ -44,6 +44,15 @@
 }
  
 .lt-800 #lists li, .lt-800 #list li {
+    border-left: 8px solid #ccc;
+    border-bottom: none;
+}
+
+.lt-800 #list_options li a{
+    margin-right: 10px;
+}
+
+.lt-800 #list_options li{
     border-left: 8px solid #ccc;
     border-bottom: none;
 }
