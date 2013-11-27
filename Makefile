@@ -1,15 +1,14 @@
 all: upload
 
 clear:
-	rm todo.zip
-	rm todo.apk
+	rm todo.zip -f
+	rm todo.apk -f
 
 build: clear
 	zip todo.zip * -r
 
 upload: build
-	curl -F file=@todo.zip -u diogo@diogok.net -F 'data={"title":"To Do","create_method":"file"}' \
-		https://build.phonegap.com/api/v1/apps
+	curl -F file=@todo.zip -X PUT -u diogo@diogok.net https://build.phonegap.com/api/v1/apps/622086
 
 download: 
 	wget http://build.phonegap.com/apps/622086/download/android -O todo.apk
