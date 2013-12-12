@@ -7,14 +7,14 @@ h1 {
     text-align: center;
 }
 
-#lists li a ,#list_options li a {
+#lists li a {
     display: block;
     text-decoration:none;
     font-size: 16px;
     padding: 5px;
 }
 
-#lists li a:hover, #list li:hover, #list_options li:hover{
+#lists li a:hover, #list li:hover{
     background-color: #EEE;
 }
 
@@ -22,7 +22,7 @@ h1 {
     float: right;
 }
  
-#lists li, #list li , #list_options li{
+#lists li, #list li{
     border-left: 5px solid #ccc;
     border-bottom: 2px solid #ccc;
 }
@@ -36,8 +36,7 @@ h1 {
     float: right;
 }
 
-.gt-800 #list h2 i.icon-arrow-left, 
-.gt-800 #list_options h2 i.icon-arrow-left {
+.gt-800 #list h2 i.icon-arrow-left {
     display: none;
 }
 
@@ -45,8 +44,14 @@ html[id*='alist-'] #list {
     display: block;
 }
 
+form input,
+form button 
+{
+    display: inline-block !important;
+    margin:none
+}
+
 html[id*='alist-'] #new_list,
-html[id*='alist-'] #list_options,
 html[id*='alist-'] #new_item
 {
     display: none;
@@ -57,7 +62,6 @@ html[id*='alist-'] #new_item
 }
 
 #lists-page #new_list,
-#lists-page #list_options,
 #lists-page #new_item,
 #lists-page #list
 {
@@ -69,30 +73,18 @@ html[id*='alist-'] #new_item
 }
 
 #new-list-page #list ,
-#new-list-page #new_item,
-#new-list-page #list_options
+#new-list-page #new_item
 {
     display: none;
 }
 
-#options-list-page #list_options {
-    display: block;
-}
-
-#options-list-page #list ,
-#options-list-page #new_item,
-#options-list-page #new_list
-{
-    display: none;
-}
 
 #new-item-page #new_item {
     display: block;
 }
 
 #new-item-page #list ,
-#new-item-page #new_list,
-#new-item-page #list_options
+#new-item-page #new_list
 {
     display: none;
 }

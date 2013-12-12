@@ -23,8 +23,8 @@ var todo = function(){
         }
     }
 
-    $("#list ul, #list_options ul").on("click","a.del",function(evt){
-        return confirm("Mark this item done?");
+    $("#list").on("click","a.del",function(evt){
+        return confirm("Remove this?");
     });
 
     $("#new_list form").submit(function(){
@@ -36,24 +36,18 @@ var todo = function(){
         return false;
     });
 
-    $("#new_item form").submit(function(){
-        var content = $("#new_item form input").val().trim();
+    $("#list form").submit(function(){
+        var content = $("#list form input").val().trim();
         if(content.length < 1) return false;
-        db.post({type:'item',content:content,list:curr_list,timestamp: now()},function(err,res) {});
-        $("#new_item form input").val("");
-        location.hash="#/alist/"+curr_list;
+        db.post({type:'item',content:content,list:curr_list,timestamp: now()},function(err,res) {
+            $("#list ul").append("<li><span>"+content+"</span><a href='#/del/item/"+res.id+"' class='del'><i class='icon-check'></i></a></li>")
+            $(".no-item").remove();
+        });
+        $("#list form input").val("");
         return false;
     });
 
     Path.map("#/new/list").to(function(){
-    });
-
-    Path.map("#/new/item").to(function(){
-        $("#new_item a.back").attr("href","#/alist/"+curr_list);
-    });
-
-    Path.map("#/options/list").to(function(){
-        $("#list_options a.back").attr("href","#/alist/"+curr_list);
     });
 
     Path.map("#/lists").to(function(){
@@ -79,7 +73,7 @@ var todo = function(){
                 $("#list ul").html("");
                 var rows = res.rows.filter(function(r) { return r.key === curr_list ;}).map(function(r) { return r.value;});
                 if(rows.length < 1) {
-                    $("#list ul").append("<li>You have no item here yet...</li>");
+                    $("#list ul").append("<li class='no-item'>You have no item here yet...</li>");
                 } else {
                     for(var i  in rows) {
                         var content=rows[i].content,id=rows[i]["_id"];

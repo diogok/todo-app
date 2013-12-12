@@ -32,8 +32,8 @@
             <form>
                 <fieldset>
                     <legend><a href="#/lists"><i class='icon-arrow-left'></i></a> New List</legend>
-                    <p><input id="new_list" name="new_list" placeholder="list name" type="text" /></p>
-                    <p><button type="submit">Create</button></p>
+                    <p><input id="new_list" name="new_list" placeholder="list name" type="text" />
+                        <button type="submit"><i class='icon-plus'></i></button></p>
                 </fieldset>
             </form>
         </div>
@@ -41,28 +41,15 @@
             <h2>
                 <a href="#/lists"><i class='icon-arrow-left'></i></a>
                 <span>No list yet...</span>
-                <a href="#/options/list"><i class='icon-edit'></i></a>
+                <a href="#/del/list" class='del'><i class='icon-remove'></i></a>
             </h2>
-            <ul>
-            </ul>
-        </div>
-        <div class="twelve columns" id="new_item">
             <form>
                 <fieldset>
-                    <legend><a href="#" class='back'><i class='icon-arrow-left'></i></a> New Item</legend>
-                    <p><input id="new_item" name="new_item" placeholder="your item here" type="text" /></p>
-                    <p><button type="submit">Create</button></p>
+                    <p><input id="new_item_txt" name="new_item_txt" placeholder="new item" type="text" />
+                        <button type="submit"><i class='icon-plus'></i></button></p>
                 </fieldset>
             </form>
-        </div>
-        <div class="twelve columns" id="list_options">
-            <h2>
-                <a href="#" class='back'><i class='icon-arrow-left'></i></a>
-                <span></span>
-            </h2>
             <ul>
-                <li><a href="#/new/item">Add item</a></li>
-                <li><a href="#/del/list" class='del'>Delete list</a></li>
             </ul>
         </div>
 	</div>
