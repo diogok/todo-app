@@ -113,8 +113,12 @@ var todo = function(){
 
     var oldFn = window.onhashchange ;
     window.onhashchange = function() {
-        html.attr("id",location.hash.substring(2).replace("_","-").replace("/","-")+'-page');
-        oldFn();
+        if(location.hash.replace("#","").replace("/","") == '') {
+            location.hash = '#/lists';
+        } else {
+            html.attr("id",location.hash.substring(2).replace("_","-").replace("/","-")+'-page');
+            oldFn();
+        }
     };
 
 
