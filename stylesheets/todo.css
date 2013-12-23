@@ -95,3 +95,9 @@ html[id*='alist-'] #new_item
 {
     display: none;
 }
+
+html[id*='del-item'] #new_list,
+html[id*='del-item'] #lists
+{
+    display: none;
+}
