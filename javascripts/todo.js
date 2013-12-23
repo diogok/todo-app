@@ -87,7 +87,7 @@ var todo = function(){
     Path.map("#/del/item/:id").to(function(){
         db.get(this.params["id"],function(err,doc){
             if(err != null) {
-                location.hash="#/lists";
+                window.history.back();
             } else {
                 db.remove(doc,function(err,res) {
                     location.hash="#/alist/"+curr_list;
@@ -111,12 +111,8 @@ var todo = function(){
 
     var oldFn = window.onhashchange ;
     window.onhashchange = function() {
-        if(location.hash.replace("#","").replace("/","") == '') {
-            location.hash = '#/lists';
-        } else {
-            html.attr("id",location.hash.substring(2).replace("_","-").replace("/","-")+'-page');
-            oldFn();
-        }
+        html.attr("id",location.hash.substring(2).replace("_","-").replace("/","-")+'-page');
+        oldFn();
     };
 
 
