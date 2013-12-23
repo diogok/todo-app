@@ -86,9 +86,13 @@ var todo = function(){
 
     Path.map("#/del/item/:id").to(function(){
         db.get(this.params["id"],function(err,doc){
-            db.remove(doc,function(err,res) {
-                location.hash="#/alist/"+curr_list;
-            });
+            if(err != null) {
+                location.hash="#/lists";
+            } else {
+                db.remove(doc,function(err,res) {
+                    location.hash="#/alist/"+curr_list;
+                });
+            }
         })
     });
 
