@@ -105,7 +105,7 @@ html[id*='list-'].lt-800 #lists {
     display: none
 }
 
-#lists-page.lt-800 #list {
+#lists-page.lt-800 #list, #-page.lt-800 #list {
     display: none;
 }
 
